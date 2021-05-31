@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/countText"
+        android:id="@+id/context"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="47dp"
@@ -24,8 +24,8 @@
         android:layout_marginBottom="45dp"
         android:text="+"
         app:layout_constraintBottom_toTopOf="@+id/minse"
-        app:layout_constraintEnd_toEndOf="@+id/countText"
-        app:layout_constraintStart_toStartOf="@+id/countText" />
+        app:layout_constraintEnd_toEndOf="@+id/context"
+        app:layout_constraintStart_toStartOf="@+id/context" />
 
     <Button
         android:id="@+id/minse"

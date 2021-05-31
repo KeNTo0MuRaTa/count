@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "75760215540",
+    "firebase_url": "https://myfirstapp-53004-default-rtdb.firebaseio.com",
+    "project_id": "myfirstapp-53004",
+    "storage_bucket": "myfirstapp-53004.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75760215540:android:b1ee2023b1d193506c85a1",
+        "android_client_info": {
+          "package_name": "add.murata.muraken.firstapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75760215540-ip55jpmrk3eu2bktkst3bdrna0n6hov1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS_yY9UrgTOmw_KQTBf6qJ83GYvcI_eBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75760215540-ip55jpmrk3eu2bktkst3bdrna0n6hov1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75760215540:android:6cab46250ab2de9d6c85a1",
+        "android_client_info": {
+          "package_name": "add.murata.muraken.myapplication_count"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75760215540-ip55jpmrk3eu2bktkst3bdrna0n6hov1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS_yY9UrgTOmw_KQTBf6qJ83GYvcI_eBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75760215540-ip55jpmrk3eu2bktkst3bdrna0n6hov1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
