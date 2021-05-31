@@ -1,8 +1,12 @@
 package add.murata.muraken.myapplication_count
 
+import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -17,17 +21,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        data class ScoreItem(val name: String = "",
-                             val score: Long = 0,
-                             val missCount: Int = 0,
-                             val time: Long = 0,
-                             val registerTime: Date = Date())
 
-        val db = FirebaseFirestore.getInstance()
-        val user = ScoreItem("ken",100,0,30, Date())
-        db.collection("ranking")
-            .document()
-            .set(user)
+
+        val db = Firebase.firestore
+        val user = hashMapOf(
+            "first" to "Ada",
+            "last" to "Lovelace",
+            "born" to 1815
+        )
+
+// Add a new document with a generated ID
+        db.collection("users")
+            .add(user)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                Log.w(TAG, "Error adding document", e)
+            }
 
         context.text="0"
         plus.setOnClickListener{
