@@ -14,40 +14,87 @@ class MainActivity : AppCompatActivity() {
 
     var number:Int = 0
 
-
-
+    val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
+        val cities = db.collection("cities")
 
-        val db = Firebase.firestore
-        val user = hashMapOf(
-            "first" to "Ada",
-            "last" to "Lovelace",
-            "born" to 1815
-        )
-
-// Add a new document with a generated ID
-        db.collection("users")
-            .add(user)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding document", e)
-            }
-
+        // Add a new document with a generated ID
         context.text="0"
+
         plus.setOnClickListener{
             number += 1
-            context.text=number.toString()
+            val data1 = hashMapOf(
+                "name" to "San Francisco",
+                "state" to "CA",
+                "country" to "USA",
+                "capital" to false,
+                "population" to 860000,
+                "regions" to listOf("west_coast", "norcal")
+            )
+            cities.document("SF").set(data1)
+
+            val data2 = hashMapOf(
+                "name" to "Los Angeles",
+                "state" to "CA",
+                "country" to "USA",
+                "capital" to false,
+                "population" to 3900000,
+                "regions" to listOf("west_coast", "socal")
+            )
+            cities.document("LA").set(data2)
+
+            val data3 = hashMapOf(
+                "name" to "Washington D.C.",
+                "state" to null,
+                "country" to "USA",
+                "capital" to true,
+                "population" to 680000,
+                "regions" to listOf("east_coast")
+            )
+            cities.document("DC").set(data3)
+
+            val data4 = hashMapOf(
+                "name" to "Tokyo",
+                "state" to null,
+                "country" to "Japan",
+                "capital" to true,
+                "population" to 9000000,
+                "regions" to listOf("kanto", "honshu")
+            )
+            cities.document("TOK").set(data4)
+
+            val data5 = hashMapOf(
+                "name" to "Beijing",
+                "state" to null,
+                "country" to "China",
+                "capital" to true,
+                "population" to 21500000,
+                "regions" to listOf("jingjinji", "hebei")
+            )
+            cities.document("BJ").set(data5)
         }
-        minse.setOnClickListener{
+
+        minse.setOnClickListener {
             number -= 1
-            context.text=number.toString()
+            context.text = number.toString()
+            val docRef = db.collection("cities").document("SF")
+            docRef.get()
+                .addOnSuccessListener { document ->
+                    if (document != null) {
+                        Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                    } else {
+                        Log.d(TAG, "No such document")
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.d(TAG, "get failed with ", exception)
+                }
+
         }
     }
 }
