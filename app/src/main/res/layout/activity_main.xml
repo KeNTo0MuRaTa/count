@@ -6,43 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/context"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="47dp"
-        android:text="0"
-        android:textSize="360sp"
-        app:layout_constraintBottom_toBottomOf="@+id/plus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="45dp"
         android:text="+"
-        app:layout_constraintBottom_toTopOf="@+id/minse"
-        app:layout_constraintEnd_toEndOf="@+id/context"
-        app:layout_constraintStart_toStartOf="@+id/context" />
+        tools:layout_editor_absoluteX="307dp"
+        tools:layout_editor_absoluteY="228dp" />
 
-    <Button
-        android:id="@+id/minse"
+    <EditText
+        android:id="@+id/URLedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
-        android:text="-"
-        app:layout_constraintBottom_toTopOf="@+id/clear"
-        app:layout_constraintStart_toStartOf="@+id/clear" />
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="題名"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="50dp" />
 
-    <Button
-        android:id="@+id/clear"
+    <EditText
+        android:id="@+id/Nameedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="109dp"
-        android:text="clear"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/plus"
-        app:layout_constraintStart_toStartOf="@+id/plus" />
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="104dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="376dp"
+        android:layout_height="59dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="内容"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="158dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Question"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="24dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
