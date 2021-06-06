@@ -11,7 +11,10 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main2.*
+import org.w3c.dom.NameList
+import org.w3c.dom.Text
 import java.net.URL
+import java.util.jar.Attributes
 
 /**
  * Loads [MainFragment].
@@ -30,8 +33,10 @@ class MainActivity2 : FragmentActivity() {
         val docRef = db.collection("Questions").document(number.toString())
         docRef.get().addOnSuccessListener { documentSnapshot ->
             URLText.text = documentSnapshot.toObject<URL>().toString()
+            Name.text = documentSnapshot.toObject<Attributes.Name>().toString()
+            Text.text = documentSnapshot.toObject<Text>().toString()
         }
-        plus.setOnClickListener{
+        button2.setOnClickListener{
             val data1 = hashMapOf(
                 "Name" to NameAnswer.text.toString(),
                 "Text" to textAnswer.text.toString()

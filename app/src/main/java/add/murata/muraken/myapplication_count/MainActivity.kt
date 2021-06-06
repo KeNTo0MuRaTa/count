@@ -58,8 +58,9 @@ class MainActivity : AppCompatActivity() {
                 .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
                 .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
 
-            val intent = Intent(this, RecycleView::class.java)
-            intent.putExtra("VALUE", number.toString())
+            var number = intent.getStringExtra("VALUE")
+            val intent = Intent(this, MainActivity2::class.java)
+            intent.putExtra("VALUE", number)
             startActivity(intent)
 
         }
